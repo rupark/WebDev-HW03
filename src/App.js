@@ -141,7 +141,7 @@ function App() {
     );
   }
 
-  if (cows == 4 && bulls == 4) {
+  if (bulls == 4) {
     return (
       <div className="App">
         <h1>4digits</h1>

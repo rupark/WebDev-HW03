@@ -17,7 +17,8 @@ export function updatecows(secret, guess) {
     let cows = 0;
     var i;
     for (i = 0; i < (secret.toString()).length; i++) {
-      if ((secret.toString()).includes((guess.toString()).charAt(i))) {
+      if ((secret.toString()).includes((guess.toString()).charAt(i))
+      && secret.toString().charAt(i) != guess.toString().charAt(i)) {
         cows = cows + 1;
       }
     }
