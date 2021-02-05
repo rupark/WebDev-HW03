@@ -3,6 +3,7 @@ import { uniq, updatecows, updatebulls, lives_left } from './game';
 import './App.css';
 
 function App() {
+  // concept taken from https://github.com/NatTuck/scratch-2021-01/blob/master/notes-4550/04-react-intro/notes.md
   const [secret, _setSecret] = useState(generateSecret);
   const [guesses, setGuesses] = useState([]);
   const [guess, setGuess] = useState("");
@@ -10,7 +11,7 @@ function App() {
   const [bulls, setBulls] = useState(0);
   const [apperror, setError] = useState("");
 
-  //Cow values for each round
+  // Results for each round
   const [r1, setr1] = useState("");
   const [r2, setr2] = useState("");
   const [r3, setr3] = useState("");
@@ -20,9 +21,11 @@ function App() {
   const [r7, setr7] = useState("");
   const [r8, setr8] = useState("");
 
+  // concept taken from https://github.com/NatTuck/scratch-2021-01/blob/master/notes-4550/04-react-intro/notes.md
   let bads = guesses;
-  let lives = lives_left(secret, guesses);
+  let lives = lives_left(guesses);
 
+  // concept taken from https://github.com/NatTuck/scratch-2021-01/blob/master/notes-4550/04-react-intro/notes.md
   function updateGuess(ev) {
     let text = ev.target.value;
     if (text.length < 5) {
@@ -86,6 +89,7 @@ function App() {
       setCows(updatecows(secret, guess));
       setBulls(updatebulls(secret, guess));
       setRoundVal(updatecows(secret, guess), updatebulls(secret, guess));
+      //concept taken from https://github.com/NatTuck/scratch-2021-01/blob/master/notes-4550/04-react-intro/notes.md
       setGuesses(uniq(guesses.concat(guess)));
       setGuess("");
     } else {
@@ -164,6 +168,7 @@ function App() {
     );
   }
 
+  //input text box inspired by https://github.com/NatTuck/scratch-2021-01/blob/master/notes-4550/04-react-intro/notes.md
   return (
     <div className="App">
       <h1 id="title">4digits</h1>

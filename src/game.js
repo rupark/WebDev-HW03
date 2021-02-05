@@ -1,3 +1,4 @@
+// function taken from https://github.com/NatTuck/scratch-2021-01/blob/master/notes-4550/04-react-intro/notes.md
 export function uniq(xs) {
     return Array.from(new Set(xs));
 }
@@ -25,6 +26,6 @@ export function updatecows(secret, guess) {
     return cows;
 }
 
-export function lives_left(secret, guesses) {
+export function lives_left(guesses) {
     return 8 - guesses.length;
 }
